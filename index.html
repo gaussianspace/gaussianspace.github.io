@@ -1,0 +1,138 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- bulma css template -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <!-- ionicons -->
+  <!-- <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script> -->
+  <!-- model viewer -->
+  <!-- <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js"></script> -->
+  <title>
+    GaussianSpace
+  </title>
+  <!-- <link rel="icon" href="icon.ico"> -->
+</head>
+
+
+
+<body>
+  <section class="section">
+
+  <div class="container has-text-centered">
+    <!-- paper title -->
+    <p class="title is-3"> GaussianSpace: Text guide 3D Gaussian Splatting Large Spatial Manipulations </p>
+    <!-- authors -->
+    <p class="title is-5 mt-2"> 
+      <a href="https://linktr.ee/simonmeng" target="_blank">Shengyu Meng</a><sup>1</sup>, 
+      <a href="https://research.aalto.fi/en/persons/ximing-zhong" target="_blank">Ximing Zhong</a><sup>2</sup>, 
+      <a href="https://researchportal.tuni.fi/en/persons/fujia-yu" target="_blank">Fujia Yu</a><sup>3</sup>, 
+    </p>
+
+    <!-- affiliations -->
+    <p class="subtitle is-5"> 
+      <a href="https://www.3dmicrofeel.com/" target="_blank"> <sup>1</sup> MicroFeel</a> &nbsp 
+      <a href="https://www.uibk.ac.at/en/" target="_blank"> <sup>2</sup> University of Innsbruck </a> &nbsp;
+      <a href="https://www.aalto.fi/en" target="_blank"><sup>3</sup> Aalto University </a> &nbsp;
+    </p>
+    <!-- publication -->
+        <p class="subtitle is-5"> Paper & Code is under construction. </p>
+    <!-- other links -->
+    <div class="is-flex is-justify-content-center">
+      <!-- <span class="icon-text mx-1">
+        <a class="button is-dark" href="https://xx" role="button" target="_blank"> <span class="icon"> <ion-icon name="document-outline"></ion-icon> </span> <span> Arxiv </span>  </a> 
+      </span>
+      <span class="icon-text mx-1">
+        <a class="button is-dark" href="https://xx" role="button" target="_blank"> <span class="icon"> <ion-icon name="logo-github"></ion-icon> </span> <span> Code </span> </a> 
+      </span> -->
+    </div>
+   
+  </div>
+
+  <!-- main container -->
+  <div class="container is-max-desktop has-text-centered">
+
+    <!-- abstract -->
+    <p class="title is-3 mt-5 has-text-centered"> Abstract (WIP) </p>
+    <p class="content is-size-6 has-text-left">
+      Integrating 2D diffusion models with 3D Gaussian splatting for text-guided generation of individual 3D objects and editing Gaussian scenes are recently receiving increasing attention. However, current methods for single object generation normally require additional constraints, such as masks and normal maps, which limit their applicability in handling complex spaces. Furthermore, current techniques for text-guided 3D Gaussian editing typically rely on Iterative Dataset Update (IDU) methods based on the instruct nerf2nerf, which are also unsuitable for large spatial manipulations.
+      In response to these challenges, we propose a new method,  <b>GaussianSpace</b>, which enables effective text-guided editing of large space in 3D Gaussian Splatting. The key innovation of this method lies in its consideration of both RGB loss from the ground-true images and Score Distillation Sampling (SDS) loss based on the diffusion model during the iterative process. Additionally, we have introduced an automatic weighted loss technique to steadily descend the overall loss, ensuring that the edited Gaussian scene adapts to text instructions while retaining its original structural features. This marks the first successful implementation of text-guided 3D Gaussian large spatial manipulations. 
+    <br>
+    </p>
+    <p></p>
+    
+    <!-- results (videos) -->
+
+    <video muted autoplay controls loop> <source src="video/horse2toy.mp4" type="video/mp4"> </video>
+
+
+    <p class="title is-3 mt-5 has-text-centered"> Results (Preview) </p>
+    <table class="table">
+      <tbody>
+        <tr> 
+          <th> <video muted controls autoplay loop> <source src="video/original~1.mp4" type="video/mp4"> </video> </th>
+          <th> <video muted controls autoplay loop> <source src="video/toy~1.mp4" type="video/mp4"> </video> </th>
+        </tr>
+        <tr>
+          <th class="has-text-centered"> Original Space 
+          <br><a href="https://showcase.3dmicrofeel.com/armortrans.html" target="_blank">Clik to view live demo</a>
+          </th>
+          <th class="has-text-centered"> Fantasy toys Museum 
+          <br><a href="https://showcase.3dmicrofeel.com/armortrans.html" target="_blank">Clik to view live demo</a>
+          </th>
+        </tr>
+        </tr>
+        <tr> 
+          <th> <video muted controls autoplay loop> <source src="video/cyber~1.mp4" type="video/mp4"> </video> </th>
+          <th> <video muted controls autoplay loop> <source src="video/nature~1.mp4" type="video/mp4"> </video> </th>
+        </tr>
+        <tr>
+          <th class="has-text-centered"> Cyberpunk Arsenal 
+            <br><a href="https://showcase.3dmicrofeel.com/armortrans.html" target="_blank">Clik to view live demo</a>
+          </th>
+          <th class="has-text-centered"> Abandoned Biological Museum
+            <br><a href="https://showcase.3dmicrofeel.com/armortrans.html" target="_blank">Clik to view live demo</a>
+          </th>
+        </tr>
+    </table>
+
+    <p class="content has-text-left is-size-6">
+      <b> Source of Original Space:</b> 3D gaussain scene trained from 502 frames extracted from video taken in Landeszeughaus Graz by iphone 14.</th>
+      <br>
+      <b> Prompt of Fantasy toys Museum:</b>  "anime painting of fantasy toys museum in the style of Studio Ghibli, surreal, maximalism, trending on artstation, 8K, HD, ultra details"</th>
+      <br>
+      <b> Prompt of Cyberpunk Arsenal:</b> "An robotic arsenal of future weapons in the style of neon cyberpunk, cgsociety, trending on artstation, 8K, HD"</th>
+      <br>
+      <b> Prompt of Abandoned Biological Museum:</b> "An abandoned futurism biological museum reclaimed by tropical rainforest with beautiful flowers, surreal, trending on artstation, 8K, HD, ultra details"</th>
+    </p>
+
+
+    <p class="title is-3 mt-5 has-text-centered"> Optimization Progress </p>
+    <video muted autoplay controls loop> <source src="video/horse2toy.mp4" type="video/mp4"> </video>
+    <p class="content has-text-left is-size-6">
+      <br>
+      <b>Optimization process:</b> Start with the trained 3D Gaussian scene of the original space (30000 iterations), and retrained for 20000 iterations for one hour on a singel RTX 3090 GPU.
+    </p>
+
+
+    <!-- citation -->
+    <div class="card mt-4">
+      <header class="card-header">
+        <p class="card-header-title"> Citation </p>
+      </header>
+      <div class="card-content is-size-5 has-text-left">
+<pre><code>@article{Meng2024gaussianspace,
+  title={GaussianSpace: Text guide 3D Gaussian Splatting Large Spatial Manipulations},
+  author={Meng, Shengyu and Zhong, Ximing and Yu, Fujia},
+  <!-- journal={}, -->year={2024}
+}</code></pre>
+      </div>
+    </div>
+  </div>
+
+
+  </section>
+</body>
+</html>
